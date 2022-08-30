@@ -15,10 +15,6 @@ From PortfolioProject.dbo.NashvilleHousing
 Select saleDateConverted, CONVERT(Date,SaleDate)
 From PortfolioProject.dbo.NashvilleHousing
 
-
-Update NashvilleHousing
-SET SaleDate = CONVERT(Date,SaleDate)
-
 -- If it doesn't Update properly
 
 ALTER TABLE NashvilleHousing
@@ -38,8 +34,7 @@ From PortfolioProject.dbo.NashvilleHousing
 order by ParcelID
 
 
-
-Select a.ParcelID, a.PropertyAddress, b.ParcelID, b.PropertyAddress, ISNULL(a.PropertyAddress,b.PropertyAddress)
+Select a.ParcelID, a.PropertyAddress, b.ParcelID, b.PropertyAddress
 From PortfolioProject.dbo.NashvilleHousing a
 JOIN PortfolioProject.dbo.NashvilleHousing b
 	on a.ParcelID = b.ParcelID
@@ -93,8 +88,6 @@ SET PropertySplitCity = SUBSTRING(PropertyAddress, CHARINDEX(',', PropertyAddres
 
 Select *
 From PortfolioProject.dbo.NashvilleHousing
-
-
 
 
 
